@@ -1,0 +1,10 @@
+{
+    "name": "Currency Exchange",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Extension to convert currencies quickly",
+    "action":{
+        "default_icon": "coin.png",
+        "default_popup": "index.html"
+    }
+}
