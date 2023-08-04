@@ -1,0 +1,65 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    text-align: center;
+    width: 500px;
+    background: #0B003F;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: white;
+}
+
+#title{
+    color: #49BF00;
+}
+
+#input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#To{
+    color: white;
+}
+
+#amount{
+    background: #0B003F;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+select{
+    background-color: #058833ec;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+}
+
+button{
+    background-color: #058833ec;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+}
+
+button:hover{
+    box-shadow: 2px 2px 4px #72cf07ec;
+    cursor: pointer;
+}
+
+#result{
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    color: white;
+    margin-top: 10px;
+}
