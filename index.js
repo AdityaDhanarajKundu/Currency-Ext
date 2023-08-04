@@ -13,19 +13,26 @@ convertEl.addEventListener("click", () => {
     let wantTotal = wantEl.value;
     let api_url = `https://api.api-ninjas.com/v1/convertcurrency?want=${wantTotal}&have=${haveTotal}&amount=${amountTotal}`;
 
-    $.ajax({
+    fetch(api_url, {
         method: 'GET',
-        url: api_url, // Use the api_url variable here
-        headers: { 'X-Api-Key': api_key }, // Use the api_key variable here
-        contentType: 'application/json',
-        success: function(result) {
-            resultEl.textContent="";
-            console.log(result);
-            resultEl.textContent=`${result.old_amount} ${result.old_currency} = ${result.new_amount} ${result.new_currency}`;
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-            resultEl.textContent="Can't get the exchange rates, please try again";
+        headers: {
+            'X-Api-Key': api_key,
+            'Content-Type': 'application/json'
         }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(result => {
+        resultEl.textContent = "";
+        console.log(result);
+        resultEl.textContent = `${result.old_amount} ${result.old_currency} = ${result.new_amount} ${result.new_currency}`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        resultEl.textContent = "Can't get the exchange rates, please try again";
     });
 }); // Remove the extra parenthesis here

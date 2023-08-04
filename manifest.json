@@ -6,8 +6,11 @@
     "action":{
         "default_icon": "coin.png",
         "default_popup": "index.html"
-    },"permissions":[
+    },"host_permissions":[
         "https://api.api-ninjas.com/*"
     ],
-    "content_security_policy": "script-src 'self' 'unsafe-eval' https://ajax.googleapis.com 'unsafe-inline'; object-src 'self'"
+    "permissions":[
+        "tabs",
+        "storage"
+    ]
 }
